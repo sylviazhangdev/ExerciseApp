@@ -5,7 +5,7 @@ export default function Exercise1Screen(){
 return(
     <View>
        <Text>
-        Excercise1
+       This is Excercise1!
        </Text>
     </View>
 );
