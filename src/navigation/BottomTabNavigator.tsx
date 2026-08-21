@@ -1,15 +1,35 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Exercise1Screen from "../screens/Exercise1Screen";
-import Exercise2Screen from "../screens/Exercise2Screen";
+import { tabs } from "./tabConfig";
+import { Icon } from "react-native-paper";
 
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
     return (
-        <Tab.Navigator>
-            <Tab.Screen name="Exercise1" component={Exercise1Screen} />
-            <Tab.Screen name="Exercise2" component={Exercise2Screen} />
+        <Tab.Navigator
+        screenOptions={{
+            // Show/hide the header(title bar)
+            headerShown:true,
+        }}
+        >
+            {/* Loop through the tabs in tabConfigs */}
+            {tabs.map( tab => (
+                <Tab.Screen 
+                key={tab.name}
+                name={tab.name} 
+                component={tab.Component} 
+                options={{
+                    title:tab.title,
+                    tabBarLabel:tab.label,
+                    tabBarIcon:({color,size}) => (
+                        <Icon source={tab.icon} size={size} color={color}/>
+                    ),
+                }}
+                />
+            ))}
+            {/* <Tab.Screen name="Exercise1" component={Exercise1Screen} />
+            <Tab.Screen name="Exercise2" component={Exercise2Screen} /> */}
         </Tab.Navigator>
     );
 }
