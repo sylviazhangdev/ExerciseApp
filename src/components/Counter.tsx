@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { View, StyleSheet} from "react-native";
-import ScreenContainer from "./ScreenContainer";
 import { Button, Text } from "react-native-paper";
 
 export default function Counter() {
