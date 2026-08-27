@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function BalanceAccount(){
 
    /* balance set deposite and withdraw by 10 */ 
-   const [balance, setBalance] = useState(10);
+   const [balance, setBalance] = useState(200);
 
    /* deposite */
    const Deposit = () => {
