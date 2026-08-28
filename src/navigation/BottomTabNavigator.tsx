@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { tabs } from "./tabConfig";
 import { Icon } from "react-native-paper";
+import theme from "../theme/theme";
 
 
 const Tab = createBottomTabNavigator();
@@ -11,6 +12,18 @@ export default function BottomTabNavigator() {
         screenOptions={{
             // Show/hide the header(title bar)
             headerShown:true,
+
+            // Styling
+            headerStyle: {
+                backgroundColor :theme.colors.primary,
+            },
+            // tabBarStyle: {
+
+            // },
+            headerTintColor: theme.colors.onPrimary,
+            tabBarActiveTintColor: theme.colors.primary,
+            tabBarInactiveTintColor: theme.colors.outline,
+
         }}
         >
             {/* Loop through the tabs in tabConfigs */}

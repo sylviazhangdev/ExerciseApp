@@ -11,8 +11,10 @@ const theme = {
 
         // Override specific colors
         primary: "#00aced",
+        onPrimary: "#fff",
         secondary: "#f78d0b",
-        onSurface: "#333"
+        onSecondary: "#fff",
+        onSurface: "#333",
     }
 };
 
