@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabNavigator from "./BottomTabNavigator";
+import NotFoundScreen from "../screens/NotFoundScreen";
 
 export default function RootNavigator() {
     return(
@@ -12,7 +13,19 @@ export default function RootNavigator() {
                             }
                         }
            />
-                    </Stack.Navigator>
+
+             <Stack.Screen name="NotFound"
+                        component={NotFoundScreen}
+                        options={
+                            {
+                                headerShown:false,
+                            }
+                        }
+           />
+        </Stack.Navigator>
+
+                    // NotFound
+                    
 
     );
 }
