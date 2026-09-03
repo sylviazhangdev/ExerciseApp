@@ -57,6 +57,7 @@ export default function BottomTabNavigator() {
                 key={tab.name}
                 name={tab.name} 
                 component={tab.Component} 
+                initialParams={tab.initialParams}
                 options={{
                     ...tab.options, // Merge the custom options
                     title:tab.title,

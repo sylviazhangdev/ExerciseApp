@@ -24,53 +24,62 @@ import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 
 interface Tab {
     /** Internal route name used for navigation */
-    name:string;
+    name: string;
     /**  Display title for the screen*/
-    title:string;
+    title: string;
     /** Shortly display label shown in the tab bar*/
-    label:string;
+    label: string;
     /** Material Design icon name */
-    icon:string;
+    icon: string;
 
     /** React component rendered for the tab. */
-    Component:React.ComponentType<any>;
+    Component: React.ComponentType<any>;
 
     /** Options for each tab, e.g. styling and behaviour  */
     options?: BottomTabNavigationOptions;
+
+    /**  initial params objects for the route. */
+    initialParams?: object,
 }
 
 
-export const tabs:Tab[] = [
-{
-    name: "Home",
-    label:"Home",
-    title: "Home",
-    icon: "home",
-    Component:HomeScreen,
-    options: {
-       headerShown: false,
+export const tabs: Tab[] = [
+    {
+        name: "Home",
+        label: "Home",
+        title: "Home",
+        icon: "home",
+        Component: HomeScreen,
+        options: {
+            headerShown: false,
+        },
     },
-},
-{
-    name: "Exercises",
-    label:"Exercises",
-    title: "Exercises",
-    icon: "book-open-page-variant-outline",
-    Component:ExerciseNavigator,
-},
-{
-    name: "Exercise1",
-    label:"Ex 01",
-    title: "Exercise 01",
-    icon: "numeric-1-circle",
-    Component:Exercise1Screen,
-},
-{
+    {
+        name: "Exercises",
+        label: "Exercises",
+        title: "Exercises",
+        icon: "book-open-page-variant-outline",
+        Component: ExerciseNavigator,
+        options: {
+            // popToTopOnBlur: true, //Nested stack should be "popped" to the top of the stack when navigating away from this tab
+        },
+        initialParams: {
+            screen: "ExerciseList"
+        },
+    },
+    {
+        name: "Exercise1",
+        label: "Ex 01",
+        title: "Exercise 01",
+        icon: "numeric-1-circle",
+        Component: Exercise1Screen,
+    },
+    {
 
-    name: "Exercise2",
-    label: "Ex 02",
-    title: "Exercise 02",
-    icon: "numeric-2-circle",
-    Component:Exercise2Screen,
-},
+        name: "Exercise2",
+        label: "Ex 02",
+        title: "Exercise 02",
+        icon: "numeric-2-circle",
+        Component: Exercise2Screen,
+    },
 ];
