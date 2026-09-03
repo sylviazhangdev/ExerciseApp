@@ -10,6 +10,7 @@ import Exercise1Screen from "../screens/Exercise1Screen";
 import Exercise2Screen from "../screens/Exercise2Screen";
 import ExerciseNavigator from "./ExerciseNavigator";
 import HomeScreen from "../screens/HomeScreen";
+import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 
 // /**   
 //  * Configuration for a bottom navigation tab.
@@ -33,6 +34,9 @@ interface Tab {
 
     /** React component rendered for the tab. */
     Component:React.ComponentType<any>;
+
+    /** Options for each tab, e.g. styling and behaviour  */
+    options?: BottomTabNavigationOptions;
 }
 
 
@@ -43,6 +47,9 @@ export const tabs:Tab[] = [
     title: "Home",
     icon: "home",
     Component:HomeScreen,
+    options: {
+       headerShown: false,
+    },
 },
 {
     name: "Exercises",
