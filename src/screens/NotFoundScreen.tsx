@@ -1,22 +1,22 @@
-import {Button, Text } from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 import ScreenContainer from "../components/ScreenContainer";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 
 type NotFoundScreenProps = {
-     navigation: NativeStackNavigationProp<any>
+    navigation: NativeStackNavigationProp<any>
 };
 
-export default function NotFoundScreen({ navigation }:NotFoundScreenProps) {
+export default function NotFoundScreen({ navigation }: NotFoundScreenProps) {
     return (
         <ScreenContainer>
-            <Text variant="headLineMedium"> 404 Page not found </Text>
-            <Button 
-                   mode="contained"
-                   onPress={()=>navigation.navigate("Root",{screen: "Exercise"})}
+            <Text variant="headlineMedium"> 404 Page not found </Text>
+            <Button
+                mode="contained"
+                onPress={() => navigation.navigate("Root", { screen: "Exercise" })}
             >
-            Go to Exercise 2
-           </Button>
+                Go to Exercise 2
+            </Button>
         </ScreenContainer>
     );
 }

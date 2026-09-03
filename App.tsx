@@ -16,7 +16,6 @@ export default function App() {
       <PaperProvider theme={theme}>
         <NavigationContainer linking={linking}>
           <RootNavigator/>
-            <BottomTabNavigator/>
         </NavigationContainer>
       </PaperProvider>
     </SafeAreaProvider>

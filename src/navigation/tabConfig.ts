@@ -8,6 +8,7 @@
 import { Component } from "react";
 import Exercise1Screen from "../screens/Exercise1Screen";
 import Exercise2Screen from "../screens/Exercise2Screen";
+import ExerciseNavigator from "./ExerciseNavigator";
 
 // /**   
 //  * Configuration for a bottom navigation tab.
@@ -30,11 +31,18 @@ interface Tab {
     icon:string;
 
     /** React component rendered for the tab. */
-    Component:React.ComponentType;
+    Component:React.ComponentType<any>;
 }
 
 
 export const tabs:Tab[] = [
+{
+    name: "Exercises",
+    label:"Exercises",
+    title: "Exercises",
+    icon: "book-open-page-variant-outline",
+    Component:ExerciseNavigator,
+},
 {
     name: "Exercise1",
     label:"Ex 01",
