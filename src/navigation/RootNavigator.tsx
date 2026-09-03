@@ -18,7 +18,7 @@ export default function RootNavigator() {
                         component={NotFoundScreen}
                         options={
                             {
-                                headerShown:false,
+                                title:"not found 404",
                             }
                         }
            />
