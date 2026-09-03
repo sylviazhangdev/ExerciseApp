@@ -8,7 +8,9 @@ import theme from "../theme/theme";
 
 export default function ExerciseNavigator() {
     return (
-        <Stack.Navigator screenOptions={{
+        <Stack.Navigator 
+        initialRouteName="ExerciseList" // Route to render by default
+        screenOptions={{
             headerShown: true,
             headerStyle: {
                 backgroundColor: theme.colors.secondary,

@@ -17,7 +17,7 @@ export default function HomeScreen({ navigation }: NotFoundScreenProps) {
                 <Appbar.Action icon="bell-outline" onPress={() => { }} />
             </Appbar.Header>
 
-            <ScrollView style={styles.content}>// add style here
+            <ScrollView style={styles.content}>
                 <View style={styles.welcome}>
                     <Avatar.Icon icon="run" size={60} />
                     <Text variant="headlineSmall" style={styles.title}> A collection of exercises! </Text>
