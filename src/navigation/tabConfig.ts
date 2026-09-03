@@ -9,6 +9,7 @@ import { Component } from "react";
 import Exercise1Screen from "../screens/Exercise1Screen";
 import Exercise2Screen from "../screens/Exercise2Screen";
 import ExerciseNavigator from "./ExerciseNavigator";
+import HomeScreen from "../screens/HomeScreen";
 
 // /**   
 //  * Configuration for a bottom navigation tab.
@@ -36,6 +37,13 @@ interface Tab {
 
 
 export const tabs:Tab[] = [
+{
+    name: "Home",
+    label:"Home",
+    title: "Home",
+    icon: "home",
+    Component:HomeScreen,
+},
 {
     name: "Exercises",
     label:"Exercises",

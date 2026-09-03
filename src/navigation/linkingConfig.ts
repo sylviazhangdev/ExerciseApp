@@ -10,6 +10,7 @@ export const linking: LinkingOptions<ReactNavigation.RootParamList> = {
         screens: {
             Root: {//Bottom tab nav
                 screens: {
+                    Home: "home",
                     Exercises: {//Exercise nav(stack)
                         path: "exercises",
                         screens: {
