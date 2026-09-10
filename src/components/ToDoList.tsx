@@ -16,10 +16,8 @@ export default function ToDoList() {
     // todo List
     const [todos, setTodos] = useState<Todo[]>([]);
 
+    // add a new todo item
     const addTodo = () => {
-
-        console.log("before:", todo);
-
 
         if (!todo.trim()) { return; }
 
@@ -38,9 +36,12 @@ export default function ToDoList() {
         //clear textInput
         setTodo("");
 
-        console.log("after setTodo");
+    };
 
-
+    //remove a todo by id
+    const removeTodo = (id: string) => {
+        setTodos((currentTodos) => currentTodos.filter((item) => item.id !== id)
+        );
     };
 
 
@@ -71,7 +72,16 @@ export default function ToDoList() {
             renderItem={({ item }) => (
                 <View style={styles.todoItem}>
                     <Text>{item.text}</Text>
+
+                    <Button
+                        mode="text"
+                        onPress={() => removeTodo(item.id)}
+                    >
+                        Remove
+                    </Button>
                 </View>
+
+
             )}
         />
 
@@ -94,6 +104,9 @@ const styles = StyleSheet.create({
     },
 
     todoItem: {
-        paddingVertical: 10,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingVertical: 8,
     },
 })
