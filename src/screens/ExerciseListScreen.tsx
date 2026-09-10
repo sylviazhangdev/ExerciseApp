@@ -23,6 +23,12 @@ export default function ExerciseListScreen({ navigation } : ExerciseListScreenPr
             icon: "numeric-2-circle",
             route: "Exercise2",
         },
+        {
+            title: "Excercise03: ToDo List",
+            description: "Use state to add and remove ToDo items.",
+            icon: "numeric-3-circle",
+            route: "Exercise3",
+        },
     ];
 
 

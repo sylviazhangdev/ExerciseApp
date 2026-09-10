@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ExerciseListScreen from "../screens/ExerciseListScreen";
 import Exercise1Screen from "../screens/Exercise1Screen";
 import Exercise2Screen from "../screens/Exercise2Screen";
+import Exercise3Screen from "../screens/Exercise3Screen";
 import theme from "../theme/theme";
 
 
@@ -51,6 +52,15 @@ export default function ExerciseNavigator() {
                 options={
                     {
                         title: "Exercise 02: Counter",
+                    }
+                }
+            />
+
+             <Stack.Screen name="Exercise3"
+                component={Exercise3Screen}
+                options={
+                    {
+                        title: "Exercise 03: To Do List",
                     }
                 }
             />
