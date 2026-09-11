@@ -17,10 +17,12 @@ export const linking: LinkingOptions<ReactNavigation.RootParamList> = {
                             ExerciseList: "",
                             Exercise1: "exercise-1",
                             Exercise2: "exercise-2",
+                            Exercise3: "exercise-3",
                         }
                     },
-                    Exercise1: "exercise-1",
-                    Exercise2: "exercise-2",
+                    // Exercise1: "exercise-1",
+                    // Exercise2: "exercise-2",
+                    Settings: "settings",
                 }
             },
             NotFound: "*",// Catch-all route (404)

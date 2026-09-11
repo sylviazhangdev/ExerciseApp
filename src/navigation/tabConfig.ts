@@ -10,6 +10,7 @@ import Exercise1Screen from "../screens/Exercise1Screen";
 import Exercise2Screen from "../screens/Exercise2Screen";
 import ExerciseNavigator from "./ExerciseNavigator";
 import HomeScreen from "../screens/HomeScreen";
+import SettingsScreen from "../screens/SettingsScreen";
 import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 
 // /**   
@@ -67,19 +68,27 @@ export const tabs: Tab[] = [
             screen: "ExerciseList"
         },
     },
-    {
-        name: "Exercise1",
-        label: "Ex 01",
-        title: "Exercise 01",
-        icon: "numeric-1-circle",
-        Component: Exercise1Screen,
-    },
-    {
+    // {
+    //     name: "Exercise1",
+    //     label: "Ex 01",
+    //     title: "Exercise 01",
+    //     icon: "numeric-1-circle",
+    //     Component: Exercise1Screen,
+    // },
+    // {
 
-        name: "Exercise2",
-        label: "Ex 02",
-        title: "Exercise 02",
-        icon: "numeric-2-circle",
-        Component: Exercise2Screen,
+    //     name: "Exercise2",
+    //     label: "Ex 02",
+    //     title: "Exercise 02",
+    //     icon: "numeric-2-circle",
+    //     Component: Exercise2Screen,
+    // },
+      {
+
+        name: "Settings",
+        label: "Settings",
+        title: "Settings",
+        icon: "cog",
+        Component: SettingsScreen,
     },
 ];
