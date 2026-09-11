@@ -1,5 +1,5 @@
 import { FlatList, ListRenderItem, ListRenderItemInfo, View } from "react-native";
-import { Card, Icon, Text } from "react-native-paper";
+import { ActivityIndicator, Button, Card, Icon, Text } from "react-native-paper";
 import ScreenContainer from "../components/ScreenContainer";
 import { useEffect, useState } from "react";
 
@@ -14,9 +14,15 @@ export default function Exercise5Screen() {
 
     const [errorMessage, setErrorMessage] = useState<string>();
 
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+
     // Load users from API
     const loadUsers = async () => {
         try {
+
+            // Reset the loading/error state
+            setIsLoading(true);
+            setErrorMessage(undefined);
 
             //example: non-async & await metho to handle promises
             // fetch(API_URL).then(r=>r.json()).then(d=> console.log(d)).catch(e=>console.warn(e))
@@ -40,40 +46,61 @@ export default function Exercise5Screen() {
             setUsers(data);
 
         } catch (error) {
+            setErrorMessage("Unable to load users");
             console.warn("Unable to load users", error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
     // Load users on startup/mount
     useEffect(() => {
         loadUsers();
+        //test error message
+        // setErrorMessage("Unable to load users TEST ERROR!!");
+
     }, []);
 
     //Render each user
-    const renderUser = ({ item,index }: ListRenderItemInfo<any>) => (
+    const renderUser = ({ item, index }: ListRenderItemInfo<any>) => (
         <Card>
             <Card.Content>
-                <Text>{index+1}. {item.name}</Text>
+                <Text>{index + 1}. {item.name}</Text>
             </Card.Content>
         </Card>
     );
 
+    // Loading state
+    if (isLoading) {
+        return (
+            <ScreenContainer>
+                <Text variant="headlineMedium"> Loading.. </Text>
+
+                <ActivityIndicator size="large" />
+                <Text> Loading Users </Text>
+            </ScreenContainer>
+        );
+    }
+
     // Error state
-    if(errorMessage) {
-        return(
-           <ScreenContainer>
-            <Text variant="headlineMedium"> ERROR<Icon size={20} source="alert" /> </Text>
-            <FlatList
-                data={users}
-                renderItem={renderUser}
-            />
-        </ScreenContainer> 
+    if (errorMessage) {
+        return (
+            <ScreenContainer>
+                <Text variant="headlineMedium"> ERROR<Icon size={20} source="alert" /> </Text>
+                <Text> {errorMessage} </Text>
+
+                <Button mode="contained" onPress={loadUsers}>
+                    Retry
+                </Button>
+
+
+            </ScreenContainer>
         );
     }
 
     return (
         <ScreenContainer>
-            <Text variant="headlineMedium"> Exercise 5: Users via API<Icon size={20} source="alert" /> </Text>
+            <Text variant="headlineMedium"> Exercise 5: Users via API </Text>
             <FlatList
                 data={users}
                 renderItem={renderUser}
