@@ -18,6 +18,8 @@ export const linking: LinkingOptions<ReactNavigation.RootParamList> = {
                             Exercise1: "exercise-1",
                             Exercise2: "exercise-2",
                             Exercise3: "exercise-3",
+                            Exercise5: "exercise-5",
+
                         }
                     },
                     // Exercise1: "exercise-1",

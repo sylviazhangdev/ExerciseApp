@@ -29,6 +29,12 @@ export default function ExerciseListScreen({ navigation } : ExerciseListScreenPr
             icon: "numeric-3-circle",
             route: "Exercise3",
         },
+            {
+            title: "Excercise05: Users Via API",
+            description: "Fetch users from REST API",
+            icon: "numeric-5-circle",
+            route: "Exercise5",
+        },
     ];
 
 
