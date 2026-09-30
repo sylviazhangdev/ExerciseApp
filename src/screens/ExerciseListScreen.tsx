@@ -8,7 +8,7 @@ type ExerciseListScreenProps = {
 };
 
 
-export default function ExerciseListScreen({ navigation } : ExerciseListScreenProps) {
+export default function ExerciseListScreen({ navigation }: ExerciseListScreenProps) {
 
     const exercises = [
         {
@@ -29,11 +29,17 @@ export default function ExerciseListScreen({ navigation } : ExerciseListScreenPr
             icon: "numeric-3-circle",
             route: "Exercise3",
         },
-            {
+        {
             title: "Excercise05: Users Via API",
             description: "Fetch users from REST API",
             icon: "numeric-5-circle",
             route: "Exercise5",
+        },
+        {
+            title: "Excercise06: MyLibrary",
+            description: "Store book titles and authors",
+            icon: "numeric-6-circle",
+            route: "Exercise6",
         },
     ];
 
