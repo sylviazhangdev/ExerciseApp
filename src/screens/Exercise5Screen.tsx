@@ -1,4 +1,4 @@
-import { FlatList, ListRenderItem, ListRenderItemInfo, View } from "react-native";
+import { FlatList, ListRenderItemInfo, View } from "react-native";
 import { ActivityIndicator, Button, Card, Icon, Text } from "react-native-paper";
 import ScreenContainer from "../components/ScreenContainer";
 import { useEffect, useState } from "react";

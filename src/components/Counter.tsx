@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, StyleSheet} from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Button, Text } from "react-native-paper";
 
 export default function Counter() {
@@ -13,18 +13,18 @@ export default function Counter() {
         </Text>
 
         <Button
-            mode = "contained"
-            onPress={()=> setCount(count+1)}
-        >  
-         INCREMENT
+            mode="contained"
+            onPress={() => setCount(count + 1)}
+        >
+            INCREMENT
         </Button>
 
         <Button
-            mode = "contained"
-            onPress={()=> setCount(count-1)}
-            disabled={count===0}
-        >  
-         DECREMENT
+            mode="contained"
+            onPress={() => setCount(count - 1)}
+            disabled={count === 0}
+        >
+            DECREMENT
         </Button>
 
     </View>
@@ -32,7 +32,7 @@ export default function Counter() {
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         gap: 16,
     }
 })
