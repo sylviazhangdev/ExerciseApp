@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
 import WishList from "./WishList";
 import BookList from "./BookList";
@@ -34,7 +34,7 @@ export default function Library() {
                 );
 
                 if (alreadyExist) return currentWishList;
-    
+
                 return [...currentWishList, book];
 
             }
@@ -43,14 +43,32 @@ export default function Library() {
     };
 
     return (
-        <View>
+        <View style={styles.container}>
+
+            <Text variant="headlineLarge">
+                Library
+            </Text>
+
+             <Text variant="headlineSmall" style={styles.listTitle}>
+                List of Books
+            </Text>
+
+            <BookList books={books} onAddToWishList={addToWishList} />
 
             <WishList count={wishList.length} />
 
-            <BookList books={books} onAddToWishList={addToWishList} />
 
         </View>
 
     );
 
 }
+
+const styles = StyleSheet.create({
+    container:{
+        gap:12,
+    },
+    listTitle:{
+        marginTop:8,
+    },
+});
