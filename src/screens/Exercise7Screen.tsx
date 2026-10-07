@@ -5,9 +5,6 @@ import ScreenContainer from "../components/ScreenContainer";
 export default function Exercise7Screen() {
     return (
         <ScreenContainer>
-            <Text variant="headlineMedium">
-                Exercise07
-            </Text>
             <Library />
         </ScreenContainer>
     );

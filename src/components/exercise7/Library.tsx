@@ -1,18 +1,44 @@
 import { View } from "react-native";
 import { Text } from "react-native-paper";
 import WishList from "./WishList";
+import BookList from "./BookList";
+import { BookType } from "../../types/BookType";
+import { useState } from "react";
 
 export default function Library() {
+
+    const books: BookType[] = [
+        {
+            id: "1",
+            title: "Book1",
+            author: "Author1",
+        },
+        {
+            id: "2",
+            title: "Book2",
+            author: "Author2",
+        },
+    ];
+
+
+    const [wishList, setWishList] = useState<BookType[]>([]);
+
+    const addToWishList = (book: BookType) => {
+
+        setWishList(
+            (currentWishList) =>
+                [...currentWishList, book]
+        );
+
+    };
 
     return (
         <View>
 
-            <Text variant="headlineMedium">
-                Library
-            </Text>
+            <WishList count={wishList.length} />
 
+            <BookList books={books}  onAddToWishList={addToWishList}/>
 
-        <WishList/>
         </View>
 
     );

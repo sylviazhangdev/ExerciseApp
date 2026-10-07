@@ -1,11 +1,15 @@
 import { Text } from "react-native-paper";
 
-export default function WishList() {
+type WishListProps = {
+    count: number;
+};
+
+export default function WishList({count}:WishListProps) {
 
     return (
         <Text>
-            0 book in wish list
+            {count} {count===1?"book":"books"} in wish list.
         </Text>
     );
-    
+
 }

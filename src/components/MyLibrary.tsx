@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import { Button, Text, TextInput } from "react-native-paper";
-import { Book } from "../types/Book";
+import { BookType } from "../types/BookType";
 
 
 
@@ -14,7 +14,7 @@ export default function MyLibrary() {
     const [author, setAuthor] = useState("");
 
     //all added books
-    const [books, setBooks] = useState<Book[]>([]);
+    const [books, setBooks] = useState<BookType[]>([]);
 
     //function: add new book
     const addBook = () => {
@@ -23,7 +23,7 @@ export default function MyLibrary() {
         if (!title.trim() || !author.trim()) return;
 
         //create a new book object
-        const newBook: Book = {
+        const newBook: BookType = {
             id: Date.now().toString(),
             title: title.trim(),
             author: author.trim(),
