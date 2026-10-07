@@ -49,59 +49,61 @@ export default function MyLibrary() {
         );
     };
 
-    return <View style={styles.container}>
-        <Text variant="headlineMedium">
-            MyLibrary
-        </Text>
+    return (
+        <View style={styles.container}>
+            <Text variant="headlineMedium">
+                MyLibrary
+            </Text>
 
-        <TextInput
-            label="Enter title"
-            mode="outlined"
-            value={title}
-            onChangeText={setTitle}
-            style={styles.input}
-        />
+            <TextInput
+                label="Enter title"
+                mode="outlined"
+                value={title}
+                onChangeText={setTitle}
+                style={styles.input}
+            />
 
-        <TextInput
-            label="Enter author"
-            mode="outlined"
-            value={author}
-            onChangeText={setAuthor}
-            style={styles.input}
-        />
+            <TextInput
+                label="Enter author"
+                mode="outlined"
+                value={author}
+                onChangeText={setAuthor}
+                style={styles.input}
+            />
 
-        <Button
-            mode="contained"
-            onPress={addBook}
-        >
-            Add a book
-        </Button>
+            <Button
+                mode="contained"
+                onPress={addBook}
+            >
+                Add a book
+            </Button>
 
-        <FlatList
-            data={books}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-                <View style={styles.bookItem}>
-                    <Text variant="titleMedium"> {item.title} </Text>
+            <FlatList
+                data={books}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <View style={styles.bookItem}>
+                        <Text variant="titleMedium"> {item.title} </Text>
 
-                    <Text variant="bodyMedium"> {item.author} </Text>
-
-
-
-                    <Button
-                        mode="text"
-                        onPress={() => removeBook(item.id)}
-                    >
-                        Remove
-                    </Button>
-                </View>
+                        <Text variant="bodyMedium"> {item.author} </Text>
 
 
-            )}
-        />
+
+                        <Button
+                            mode="text"
+                            onPress={() => removeBook(item.id)}
+                        >
+                            Remove
+                        </Button>
+                    </View>
 
 
-    </View>
+                )}
+            />
+
+
+        </View>
+    );
 
 
 }

@@ -46,47 +46,49 @@ export default function ToDoList() {
 
 
 
-    return <View style={styles.container}>
-        <Text variant="headlineMedium">
-            ToDoList
-        </Text>
+    return (
+        <View style={styles.container}>
+            <Text variant="headlineMedium">
+                ToDoList
+            </Text>
 
-        <TextInput
-            label="Enter a ToDo"
-            mode="outlined"
-            value={todo}
-            onChangeText={setTodo}
-            style={styles.input}
-        />
+            <TextInput
+                label="Enter a ToDo"
+                mode="outlined"
+                value={todo}
+                onChangeText={setTodo}
+                style={styles.input}
+            />
 
-        <Button
-            mode="contained"
-            onPress={addTodo}
-        >
-            Add To do
-        </Button>
+            <Button
+                mode="contained"
+                onPress={addTodo}
+            >
+                Add To do
+            </Button>
 
-        <FlatList
-            data={todos}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-                <View style={styles.todoItem}>
-                    <Text>{item.text}</Text>
+            <FlatList
+                data={todos}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <View style={styles.todoItem}>
+                        <Text>{item.text}</Text>
 
-                    <Button
-                        mode="text"
-                        onPress={() => removeTodo(item.id)}
-                    >
-                        Remove
-                    </Button>
-                </View>
-
-
-            )}
-        />
+                        <Button
+                            mode="text"
+                            onPress={() => removeTodo(item.id)}
+                        >
+                            Remove
+                        </Button>
+                    </View>
 
 
-    </View>
+                )}
+            />
+
+
+        </View>
+    );
 
 }
 
