@@ -1,14 +1,9 @@
 import { useState } from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import { Button, Text, TextInput } from "react-native-paper";
+import { Book } from "../types/Book";
 
 
-
-type Book = {
-    id: string;
-    title: string;
-    author: string;
-};
 
 export default function MyLibrary() {
 
