@@ -1,6 +1,6 @@
 import { Button, Text } from "react-native-paper";
 import { BookType } from "../../types/BookType";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 type BookProps = {
     book: BookType;
@@ -14,14 +14,18 @@ export default function Book({
 
 
     return (
-        <View>
-            <Text variant="titleMedium">
-                {book.title}
-            </Text>
+        <View style= {styles.container}>
 
-            <Text variant="bodyMedium">
-                {book.author}
-            </Text>
+            <View>
+                <Text variant="titleMedium">
+                    {book.title}
+                </Text>
+
+                <Text variant="bodyMedium">
+                    {book.author}
+                </Text>
+            </View>
+
 
             <Button
                 mode="text"
@@ -34,3 +38,16 @@ export default function Book({
     );
 
 }
+
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingVertical: 12,
+        borderBottomWidth: 1,
+        borderBottomColor: "#ddd",
+    },
+
+});

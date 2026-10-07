@@ -83,11 +83,11 @@ export default function MyLibrary() {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.bookItem}>
-                        <Text variant="titleMedium"> {item.title} </Text>
 
-                        <Text variant="bodyMedium"> {item.author} </Text>
-
-
+                        <View>
+                            <Text variant="titleMedium"> {item.title} </Text>
+                            <Text variant="bodyMedium"> {item.author} </Text>
+                        </View>
 
                         <Button
                             mode="text"
@@ -125,8 +125,8 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         borderBottomWidth: 1,
         borderBottomColor: "#ddd",
-        // flexDirection: "row",
-        // justifyContent: "space-between",
-        // alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
     },
 })
