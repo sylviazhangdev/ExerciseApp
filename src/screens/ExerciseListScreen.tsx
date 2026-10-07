@@ -12,34 +12,40 @@ export default function ExerciseListScreen({ navigation }: ExerciseListScreenPro
 
     const exercises = [
         {
-            title: "Excercise01: Greeting",
+            title: "Exercise01: Greeting",
             description: "Display a simple greeting based on user name.",
             icon: "numeric-1-circle",
             route: "Exercise1",
         },
         {
-            title: "Excercise02: Counter",
+            title: "Exercise02: Counter",
             description: "Use state to maintain a counter.",
             icon: "numeric-2-circle",
             route: "Exercise2",
         },
         {
-            title: "Excercise03: ToDo List",
+            title: "Exercise03: ToDo List",
             description: "Use state to add and remove ToDo items.",
             icon: "numeric-3-circle",
             route: "Exercise3",
         },
         {
-            title: "Excercise05: Users Via API",
+            title: "Exercise05: Users Via API",
             description: "Fetch users from REST API",
             icon: "numeric-5-circle",
             route: "Exercise5",
         },
         {
-            title: "Excercise06: MyLibrary",
+            title: "Exercise06: MyLibrary",
             description: "Store book titles and authors",
             icon: "numeric-6-circle",
             route: "Exercise6",
+        },
+        {
+            title: "Exercise07: Library",
+            description: "Store book titles and authors",
+            icon: "numeric-7-circle",
+            route: "Exercise7",
         },
     ];
 

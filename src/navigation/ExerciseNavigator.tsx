@@ -6,6 +6,7 @@ import { useTheme } from "../context/ThemeContext";
 import Exercise3Screen from "../screens/Exercise3Screen";
 import Exercise5Screen from "../screens/Exercise5Screen";
 import Exercise6Screen from "../screens/Exercise6Screen";
+import Exercise7Screen from "../screens/Exercise7Screen";
 
 
 
@@ -86,6 +87,15 @@ export default function ExerciseNavigator() {
                 options={
                     {
                         title: "Exercise 06: MyLibrary component : store book titles and author names.",
+                    }
+                }
+            />
+
+             <Stack.Screen name="Exercise7"
+                component={Exercise7Screen}
+                options={
+                    {
+                        title: "Exercise 07: Build a library feature using multiple components with an Add to WishList function",
                     }
                 }
             />
