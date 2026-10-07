@@ -26,8 +26,18 @@ export default function Library() {
     const addToWishList = (book: BookType) => {
 
         setWishList(
-            (currentWishList) =>
-                [...currentWishList, book]
+
+            (currentWishList) => {
+
+                const alreadyExist = currentWishList.some(
+                    (item) => item.id === book.id
+                );
+
+                if (alreadyExist) return currentWishList;
+    
+                return [...currentWishList, book];
+
+            }
         );
 
     };
@@ -37,7 +47,7 @@ export default function Library() {
 
             <WishList count={wishList.length} />
 
-            <BookList books={books}  onAddToWishList={addToWishList}/>
+            <BookList books={books} onAddToWishList={addToWishList} />
 
         </View>
 
